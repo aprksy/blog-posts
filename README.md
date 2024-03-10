@@ -107,67 +107,67 @@ The objective of this phase is to as much align the code with the well-known & b
 |Check items|Planned|Actual|
 |---|:---:|:---:|
 |**Separation of Concerns**|
-|Isolate business logic from external dependencies (frameworks, databases, UI)|<input type="checkbox" checked>|<input type="checkbox" checked>
-|Follow the clear boundaries of the Domain, Application, and Infrastructure layers.|<input type="checkbox" checked>|<input type="checkbox" checked>
+|Isolate business logic from external dependencies (frameworks, databases, UI)|YES|YES
+|Follow the clear boundaries of the Domain, Application, and Infrastructure layers.|YES|YES
 |**Dependency Inversion Principle (DIP)**|
-|Depend on abstractions (interfaces) rather than concrete implementations.|<input type="checkbox" checked>|<input type="checkbox" checked>
-|Use dependency injection to wire components together.|<input type="checkbox" checked>|<input type="checkbox" checked>
+|Depend on abstractions (interfaces) rather than concrete implementations.|YES|YES
+|Use dependency injection to wire components together.|YES|YES
 |**Entities and Value Objects**|
-|Define domain models (entities) and value objects.|<input type="checkbox" checked>|<input type="checkbox" checked>
-|Keep domain logic within entities.|<input type="checkbox" checked>|<input type="checkbox" checked>
+|Define domain models (entities) and value objects.|YES|YES
+|Keep domain logic within entities.|YES|YES
 |**Use Cases (Application Services)**|
-|Implement use cases (application services) that orchestrate domain logic.|<input type="checkbox" checked>|<input type="checkbox" checked>
-|Keep them free from infrastructure details.|<input type="checkbox" checked>|<input type="checkbox" checked>
+|Implement use cases (application services) that orchestrate domain logic.|YES|YES
+|Keep them free from infrastructure details.|YES|YES
 |**Repositories**|
-|Define repository interfaces in the Domain layer.|<input type="checkbox" checked>|<input type="checkbox" checked>
-|Implement them in the Infrastructure layer (e.g., using Entity Framework).|<input type="checkbox" checked>|<input type="checkbox" checked>
+|Define repository interfaces in the Domain layer.|YES|YES
+|Implement them in the Infrastructure layer (e.g., using Entity Framework).|YES|YES
 |**Testability**|
-|Write unit tests for domain models, use cases, and repositories.|<input type="checkbox" checked>|<input type="checkbox">
-|Use mock repositories for testing.|<input type="checkbox" checked>|<input type="checkbox">
+|Write unit tests for domain models, use cases, and repositories.|YES|NO
+|Use mock repositories for testing.|YES|NO
 
 #### SOLID Principles Checklist
 |Check items|Planned|Actual|
 |---|:---:|:---:|
-|Single Responsibility Principle (SRP)|<input type="checkbox" checked>|<input type="checkbox" checked>
-|Open/Closed Principle (OCP)|<input type="checkbox" checked>|<input type="checkbox" checked>
-|Liskov Substitution Principle (LSP)|<input type="checkbox" checked>|<input type="checkbox" checked>
-|Interface Segregation Principle (ISP)|<input type="checkbox" checked>|<input type="checkbox" checked>
-|Dependency Inversion Principle (DIP)|<input type="checkbox" checked>|<input type="checkbox" checked>
+|Single Responsibility Principle (SRP)|YES|YES
+|Open/Closed Principle (OCP)|YES|YES
+|Liskov Substitution Principle (LSP)|YES|YES
+|Interface Segregation Principle (ISP)|YES|YES
+|Dependency Inversion Principle (DIP)|YES|YES
 
 #### 12 Factors Checklist
 |Check items|Planned|Actual|Remarks|
 |---|:---:|:---:|:---:|
 |**Codebase**|
-|Track code in version control (e.g., Git)|<input type="checkbox" checked>|<input type="checkbox" checked>||
-|Use a single source of truth for builds and deployments|<input type="checkbox" checked>|<input type="checkbox">|n/a|
+|Track code in version control (e.g., Git)|YES|YES||
+|Use a single source of truth for builds and deployments|YES|NO|n/a|
 |**Dependencies**|
-|Explicitly declare and isolate dependencies (e.g., package managers)|<input type="checkbox" checked>|<input type="checkbox" checked>||
+|Explicitly declare and isolate dependencies (e.g., package managers)|YES|YES||
 |**Config**|
-|Store configuration in environment variables|<input type="checkbox" checked>|<input type="checkbox">||
-|Avoid hardcoding configuration values|<input type="checkbox" checked>|<input type="checkbox">||
+|Store configuration in environment variables|YES|NO||
+|Avoid hardcoding configuration values|YES|NO||
 |**Backing Services**|
-|Treat databases, caches, and other services as attached resources|<input type="checkbox" checked>|<input type="checkbox" checked>||
+|Treat databases, caches, and other services as attached resources|YES|YES||
 |**Build, Release, Run**|
-|Separate build, release, and run stages|<input type="checkbox" checked>|<input type="checkbox">|n/a|
-|Use immutable releases|<input type="checkbox" checked>|<input type="checkbox">|n/a|
+|Separate build, release, and run stages|YES|NO|n/a|
+|Use immutable releases|YES|NO|n/a|
 |**Processes**|
-|Execute the app as stateless processes|<input type="checkbox" checked>|<input type="checkbox">||
-|Scale horizontally|<input type="checkbox" checked>|<input type="checkbox">|n/a|
+|Execute the app as stateless processes|YES|NO||
+|Scale horizontally|YES|NO|n/a|
 |**Port Binding**|
-|Export services via port binding|<input type="checkbox" checked>|<input type="checkbox" checked>||
-|Use environment variables for port configuration|<input type="checkbox" checked>|<input type="checkbox">||
+|Export services via port binding|YES|YES||
+|Use environment variables for port configuration|YES|NO||
 |**Concurrency**|
-|Scale out by adding more processes|<input type="checkbox" checked>|<input type="checkbox">|n/a|
-|Avoid relying on shared memory|<input type="checkbox" checked>|<input type="checkbox" checked>||
+|Scale out by adding more processes|YES|NO|n/a|
+|Avoid relying on shared memory|YES|YES||
 |**Disposability**|
-|Maximize robustness with fast startup and graceful shutdown|<input type="checkbox" checked>|<input type="checkbox" checked>||
+|Maximize robustness with fast startup and graceful shutdown|YES|YES||
 |**Dev/Prod Parity**|
-|Keep development, staging, and production environments as similar as possible|<input type="checkbox" checked>|<input type="checkbox">|n/a|
+|Keep development, staging, and production environments as similar as possible|YES|NO|n/a|
 |**Logs**|
-|Treat logs as event streams|<input type="checkbox" checked>|<input type="checkbox">||
-|Aggregate logs centrally|<input type="checkbox" checked>|<input type="checkbox">||
+|Treat logs as event streams|YES|NO||
+|Aggregate logs centrally|YES|NO||
 |**Admin Processes**|
-|Run admin/management tasks as one-off processes|<input type="checkbox" checked>|<input type="checkbox">|n/a|
+|Run admin/management tasks as one-off processes|YES|NO|n/a|
 
 ## Further Enhancements
 > If time wasn't a constraint what else would you have done?
