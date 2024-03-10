@@ -178,6 +178,7 @@ The objective of this phase is to as much align the code with the well-known & b
     - enable retry mechanism
 - Create unit tests (planned to use xunit & moq)
 - Define other production supporting services (logging, rate-limiter etc.)
+- Complete Best Practice Checklists entry that still marked 'NO'.
 
 > How was this test overall? I.e too hard, too easy, how long it took, etc
 - For Senior Engineer, IMHO:
