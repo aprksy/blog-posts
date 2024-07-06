@@ -77,6 +77,7 @@ foo {4, 29.3};
 // and so on...
 ```
 #### Doesn't allow narrowing type conversion
+In C++, narrowing conversion is a *potentially unsafe numeric conversion where the destination type may not be able to hold all the values of the source type*.
 The following code won't compile, that is to prevent unintentional typecast which can produce error in further flow of the program.
 ```c++
 // initialize variable d as double with value 10.71 
@@ -165,7 +166,7 @@ auto var_name {1, 2, 3}
 // var_name is of type std::initializer_list<int>
 auto var_name = {2, 3, 4}
 ```
-replacing `auto` with actual data type will solve the problem.
+However, with simply replacing `auto` with actual data type should have solved the problem.
 
 #### Vector type
 It's actually more like warning to not mixed up with the old initialization approach like the following code:
@@ -179,7 +180,9 @@ std::vector<int> myvector {3, 0};
 ```
 
 #### The *strongly prefer `std::initializer_list`* constructor
-Imagine we have a class with overloaded constructor, first with whatever parameters (in the following example using `int` and `float`) and another one with `std::initializer_list` parameter.
+*Strongly prefer `std::initializer_list`* constructor is actually a process of constructor overload resolution within a class. The first phase of the resolution is to inspect if there's a constructor that has `std::initializer_list` as a single parameter. This is why it is said to be *strongly prefer `std::initializer_list` constructor*.
+
+To be clear, let's imagine we have a class with overloaded constructor, first with whatever parameters (in the following example using `int` and `float`) and another one with `std::initializer_list` parameter.
 ```c++
 class foo {
     public:
@@ -207,4 +210,5 @@ The code above won't compile. Why? because, foo has the *strongly prefered* cons
 
 ## Reference
 [SYCL 101](https://www.intel.com/content/www/us/en/docs/sycl/introduction/latest/01-uniform-initialization.html)
-[]()
+
+[C++ standard's draft](https://timsong-cpp.github.io/cppwp/n4659/#over)
