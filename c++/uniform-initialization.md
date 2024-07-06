@@ -209,8 +209,6 @@ The code above won't compile. Why? because, foo has the *strongly prefered* cons
 | **When not to use** | see the *Why not?* section |
 
 ## Reference
-[SYCL 101](https://www.intel.com/content/www/us/en/docs/sycl/introduction/latest/01-uniform-initialization.html)
-
-Beginning C++20: From Novice to Professional (Ivor Horton, Peter Van Weert)
-
-[C++ standard's draft](https://timsong-cpp.github.io/cppwp/n4659/#over)
+- [SYCL 101](https://www.intel.com/content/www/us/en/docs/sycl/introduction/latest/01-uniform-initialization.html)
+- Beginning C++20: From Novice to Professional (Ivor Horton, Peter Van Weert)
+- [C++ standard's draft](https://timsong-cpp.github.io/cppwp/n4659/#over)
