@@ -77,7 +77,8 @@ foo {4, 29.3};
 // and so on...
 ```
 #### Doesn't allow narrowing type conversion
-In C++, narrowing conversion is a *potentially unsafe numeric conversion where the destination type may not be able to hold all the values of the source type*.
+> In C++, narrowing conversion is a *potentially unsafe numeric conversion where the destination type may not be able to hold all the values of the source type*.
+
 The following code won't compile, that is to prevent unintentional typecast which can produce error in further flow of the program.
 ```c++
 // initialize variable d as double with value 10.71 
@@ -108,7 +109,7 @@ int i {int(d)};
 ```
 
 #### Fixes most vexing parse
-There's a rule in C++ parser that, everytime it finds something considered as function declaration, then treat it as function declaration. 
+> There's a rule in C++ parser that, everytime it finds something considered as function declaration, then treat it as function declaration. 
 
 Now consider the following example:
 ```c++
@@ -149,7 +150,7 @@ class foo {
 }
 ```
 ### Why not?
-With all the pros above, still, we need to be aware that there are some cases that we need to not just used it along with other conveniences. Actually the following are just special cases where if all the condition occur, we might need to use another approach.
+With all the pros above, still, we need to be aware that there are some cases that we need to not just used it along with other conveniences. Actually the following are just special cases where &mdash;if all the condition occur&mdash; we might need to use another approach.
 
 #### Auto type
 While using `auto` in variable declaration is convenience, we might need to sacrifice it when using uniform initialization. Otherwise, we might get the variable type not as intended, or the code doesn't even compile.
@@ -180,7 +181,7 @@ std::vector<int> myvector {3, 0};
 ```
 
 #### The *strongly prefer `std::initializer_list`* constructor
-*Strongly prefer `std::initializer_list`* constructor is actually a process of constructor overload resolution within a class. The first phase of the resolution is to inspect if there's a constructor that has `std::initializer_list` as a single parameter. This is why it is said to be *strongly prefer `std::initializer_list` constructor*.
+*Strongly prefer `std::initializer_list`* constructor is actually a process of constructor overload resolution within a class. The first phase of the resolution is to inspect if there's a constructor that has `std::initializer_list` as a single parameter. This is why it is said to be *strongly prefer `std::initializer_list` constructor*. Please refer to *C++ standards 's draft in the *Reference* section below.
 
 To be clear, let's imagine we have a class with overloaded constructor, first with whatever parameters (in the following example using `int` and `float`) and another one with `std::initializer_list` parameter.
 ```c++
@@ -209,6 +210,6 @@ The code above won't compile. Why? because, foo has the *strongly prefered* cons
 | **When not to use** | see the *Why not?* section |
 
 ## Reference
-[SYCL 101](https://www.intel.com/content/www/us/en/docs/sycl/introduction/latest/01-uniform-initialization.html)
-
-[C++ standard's draft](https://timsong-cpp.github.io/cppwp/n4659/#over)
+- [SYCL 101](https://www.intel.com/content/www/us/en/docs/sycl/introduction/latest/01-uniform-initialization.html)
+- Beginning C++20: From Novice to Professional (Ivor Horton, Peter Van Weert)
+- [C++ standard's draft](https://timsong-cpp.github.io/cppwp/n4659/#over)
