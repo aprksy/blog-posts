@@ -49,7 +49,7 @@ The `envp` array has the possibility to be empty. Also, because of the absence o
 
 However based on many discussion on the internet, many of them discourage to use this as it's not portable between systems. Some also pointed out about overflowing possibilities. I'd like to hear from you too if you have something in mind about this.
 
-## How does it behave?
+## How does it flow?
 ### What happened before `main` begins?
 There are some activities happens when we executed a program. The following are the activities that is performed before it entering the `main` function.
 
