@@ -84,6 +84,23 @@ int main() try {
     std::cerr << "caught: " << e.what() << std::endl;
 }
 ```
+here's the output of the above program:
+```
+caught: will be caught
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  will escape
+make: *** [Makefile:14: try-main.x] Aborted (core dumped)
+```
+A little explanation of the above code:
+- entering `main`
+- throw exception, hopefully be caught
+- catching exception: yes, it is caught
+- is there user code remaing to execute? no
+- `main` exiting...
+- program do some house keeping, found `q` of type `Q`, which throws exception in its d'tor
+- destroy `q`, hence, throws exception `"will escape"`
+- is there anymore to clean up? no
+- call terminate
 
 ## What can NOT we do with it?
 ### Naming
