@@ -81,7 +81,7 @@ int main() try {
     throw std::runtime_error("will be caught");
 } catch (const std::exception& e) {
     // will caught the runtime error from main, but not from ~Q
-    std::cerr << "caught: " << e.What() << std::endl;
+    std::cerr << "caught: " << e.what() << std::endl;
 }
 ```
 
