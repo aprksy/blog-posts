@@ -32,8 +32,8 @@ std::map<int, std::string> map1 {{1, "one"}, {2, "two"}};
 
 class foo {
     public:
-        foo(): _i(0), _f(0.0) {}
-        foo(int i, float f): _i(i), _f(f) {}
+        foo(): _i(0), _f(0.0) {};
+        foo(int i, float f): _i(i), _f(f) {};
 
     private:
         int _i;
@@ -65,7 +65,7 @@ std::string email {"agung@example.com"};
 int* heights[5] {14, 22, 21, 15, 17};
 
 // map
-std::map<std::string, float> dict {{"earth", 67.5}, {"mars", 21.7}, {"venus", 33.8}}
+std::map<std::string, float> dict {{"earth", 67.5}, {"mars", 21.7}, {"venus", 33.8}};
 
 // vector
 std::vector<double> distances {12.6, 44.2, 15.7};
@@ -114,7 +114,7 @@ Now consider the following example:
 ```c++
 class foo {
     public:
-        foo() {...}
+        foo() {...};
     private:
         std::vector<int> v(3, 0);
 }
@@ -125,7 +125,7 @@ To achieve the vector v initialization we can use some other approach. First, mo
 ```c++
 class foo {
     public:
-        foo(): v(3, 0) {}
+        foo(): v(3, 0) {};
     private:
         std::vector<int> v;
 }
@@ -134,7 +134,7 @@ second, use the copy initialization:
 ```c++
 class foo {
     public:
-        foo() {}
+        foo() {};
     private:
         std::vector<int> v = std::vector<int>(3, 0);
 }
@@ -143,7 +143,7 @@ third, use the uniform initialization:
 ```c++
 class foo {
     public:
-        foo() {}
+        foo() {};
     private:
         std::vector<int> v {0, 0, 0};
 }
@@ -155,16 +155,16 @@ With all the pros above, still, we need to be aware that there are some cases th
 While using `auto` in variable declaration is convenience, we might need to sacrifice it when using uniform initialization. Otherwise, we might get the variable type not as intended, or the code doesn't even compile.
 ```c++
 // var_name is of type int
-auto var_name {1} 
+auto var_name {1};
 
 // var_name is of type std::initializer_list<int>
-auto var_name = {2}
+auto var_name = {2};
 
 // doesn't compile, error variable contains multiple expressions
-auto var_name {1, 2, 3}
+auto var_name {1, 2, 3};
 
 // var_name is of type std::initializer_list<int>
-auto var_name = {2, 3, 4}
+auto var_name = {2, 3, 4};
 ```
 However, with simply replacing `auto` with actual data type should have solved the problem.
 
@@ -187,9 +187,9 @@ To be clear, let's imagine we have a class with overloaded constructor, first wi
 class foo {
     public:
         // first constructor
-        foo(int i, float f) {}
+        foo(int i, float f) {};
         // second constructor
-        foo(std::initializer_list<bool> list) {}
+        foo(std::initializer_list<bool> list) {};
 }
 
 foo my_instance {4, 23.5};
@@ -199,7 +199,7 @@ The code above won't compile. Why? because, foo has the *strongly prefered* cons
 ## Summary
 | Key | Value |
 | --- | --- |
-| Syntax | `Type varName {}` or `Type varName = {}` |
+| Syntax | `Type varName {};` or `Type varName = {};` |
 | Introduced in | C++11 |
 | Primary Use | Direct & List initialization |
 | Flexibility | More versatile |

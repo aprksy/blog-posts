@@ -1,5 +1,7 @@
 # The C++ `main` function
 
+> I'm no expert in this field. This writing is an effort to document my learning process from multiple sources and will be updated when I get more comprehension on the topic. Feel free to correct me, or comment.
+
 When we write program using C, C++, Go, Java and many others, we mostly will interact with this function. Some libraries or frameworks minimize the interaction though, to let programmers to focus to the business layer. However, they do not replace the `main` function. In this article I'm trying to document my learning process about the `main` function, which I used to just use it without any deeper concern.
 
 ## What is it?
@@ -74,7 +76,7 @@ There are some activities happens when we executed a program. The following are 
 struct Q {
     ~Q() noexcept(false) {
         throw std::runtime_error("will escape");
-    }
+    };
 } q;
 
 int main() try {
